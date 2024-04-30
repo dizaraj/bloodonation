@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Blood Donation</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Icon Vendor CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Other Vendor CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- =======================================================
+      * Template Name: BloodDonation
+      * Template URL: https://dizaraj.pages.dev/blood-donation
+      * Updated: April 26 2024 with Bootstrap v5.3.3
+      * Author: https://dizaraj.pages.dev/
+      * License: https://dizaraj.pages.dev/blood-donation/license/
+      ======================================================== -->
+</head>
+
+<body>
+
+    <!-- Want to Donate Blood
+    > Blood Donation Camp
+    > Donor Login
+    > About Blood Donation
+    
+    -->
+
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="index.html">BloodDonation</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#">Home</a></li>
+                    <li class="dropdown"><a href="#"><span>Find Bloods</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">Donor Availability</a></li>
+                            <li><a href="#">Blood Banks</a></li>
+                            <li><a href="#">Request for Blood</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="#">Blood Request</a></li>
+                    <li><a class="nav-link scrollto" href="#">Contact</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+            <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Be A</span>
+                Donor</a>
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- <div id="navbar">
+        <a class="active" href="#">Home</a>
+        <a href="#">Blood Banks</a>
+        <a href="#">Find Donors</a>
+        <a href="#">Blood Request</a>
+        <a href="#">Donate Blood</a>
+        <a href="#">Contact</a>
+        <a href="#">Become a Donor</a>
+    </div> -->
+
+    <main>
+
+    </main>
+
+    <section id="hero" class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+            <h1 class="display-5 fw-bold text-white">Blood Donation</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="fs-5 mb-4">Navigate our registered donors near you. We are always commited to help you.</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <label for="division">Division</label>
+                            <select id="division" class="form-control">
+                                <option value="">Choose Division</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <label for="district">District</label>
+                            <select id="district" class="form-control">
+                                <option value="">Choose District</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <label for="upazila">Upazila</label>
+                            <select id="upazila" class="form-control">
+                                <option value="">Choose Upazila</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <button id="search" class="btn btn-danger btn-block mt-4">Search Donors</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hospital" id="hospital">
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Hospital Near You</h2>
+                <!-- https://codepen.io/arsho/pen/EPLqJp -->
+            </div>
+        </div>
+        <div id="map" style="width: 100%; height: 600px;"></div>
+
+    </section>
+
+
+    <section id="beadonor" class="container-fluid donor text-center p-5">
+        <h5>We are here to help the people</h5>
+        <p>You can give blood to your nearby blood requester or blood bank. We have thousands of registered poeple who
+            may need
+            your help.</p>
+        <button type="button" class="btn" style="background-color: #111111; color: white;"> Become a Donor</button>
+    </section>
+
+    <section id="nearbyDonars" class="container-fluid p-5">
+
+        <div class="conatiner">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3>Nearby Donars</h3><br>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-12 container">
+
+                    <table class="table table-dark table-striped" id="usersTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Blood Group</th>
+                                <th>Last date donated</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Abhishek Gupta</td>
+                                <td>18</td>
+                                <td>B+</td>
+                                <td>23 March 2018</td>
+                                <td>7545423441&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-info"
+                                        data-toggle="modal" data-target="#info1"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Abrar Ahmad Raza</td>
+                                <td>19</td>
+                                <td>A+</td>
+                                <td>11 Feb 2018</td>
+                                <td>8751007246&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-info"
+                                        data-toggle="modal" data-target="#info1"></span></td>
+                            </tr>
+                            <tr>
+                                <td>DeshBandhu</td>
+                                <td>18</td>
+                                <td>O+</td>
+                                <td>30 March 2017</td>
+                                <td>9842224581&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-info"
+                                        data-toggle="modal" data-target="#info1"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <center><button class="btn btn-lg btn-danger">More</button></center>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="modal fade" id="info1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body text-center">
+                    <table class="table" style="font-size: 10px;">
+                        <thead>
+                            <tr>
+                                <th>Abhishek Gupta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Age</td>
+                                <td>18</td>
+
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>Rawa Mandi, Phagwara</td>
+
+                            </tr>
+                            <tr>
+                                <td>Blood Group</td>
+                                <td>B+</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>Last date Donated</td>
+                                <td>23 March 2018</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>Contact</td>
+                                <td>7545423441</td>
+
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>gupta.Abhishek426@gmail.com</td>
+
+                            </tr>
+                            <tr>
+                                <td>Hospital Associate with</td>
+                                <td>Ganga Ben Hospital</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="eligible" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title text-center">ELIGIBILITY</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body" style="font-size: 15px;">
+                    <ul>
+                        <li>Any donor, who is healthy, fit and not suffering from any transmittable diseases can
+                            donate
+                            blood.</li>
+
+                        <li>Donor must be 18 -60 years age and having a minimum weight of 50Kg can donate blood.
+                        </li>
+                        <li>Donor’s Hemoglobin level is 12.5% minimum.</li>
+                        <li>A donor can again donate blood after 3 months of your last donation of blood.</li>
+                        <li>Pulse rate must be between 50 to 100mm without any irregularities.</li>
+                        <li>BP Diastolic 50 to 100 mm Hg and Systolic 100 to 180 mm Hg.</li>
+                        <li>Body temperature should be normal and oral temperature should not exceed 37.5 degree
+                            Celsius.</li>
+
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="doctor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalLabel">Dr. Ram Naresh - Specialist</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table" style="font-size: 10px;">
+
+                        <tbody>
+                            <tr>
+                                <td>Age</td>
+                                <td>52</td>
+
+                            </tr>
+                            <tr>
+                                <td>Specialist</td>
+                                <td>Phd Hematologist</td>
+
+                            </tr>
+                            <tr>
+                                <td>Hospital</td>
+                                <td>DY Patil Hospital, Phagwara</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>Email</td>
+                                <td>RamNaresh@gmail.com</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>Contact</td>
+                                <td>7545423441</td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="donars" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Donars</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped" style="font-size: 15px;">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Blood Group</th>
+                                <th>Last date donated</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Abhishek Gupta</td>
+                                <td>18</td>
+                                <td>B+</td>
+                                <td>23 March 2018</td>
+                                <td>7545423441</td>
+                            </tr>
+                            <tr>
+                                <td>Abrar Ahmad Raza</td>
+                                <td>19</td>
+                                <td>A+</td>
+                                <td>11 Feb 2018</td>
+                                <td>8751007246</td>
+                            </tr>
+                            <tr>
+                                <td>DeshBandhu</td>
+                                <td>18</td>
+                                <td>O+</td>
+                                <td>30 March 2017</td>
+                                <td>9842224581</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="gallery" class="text-center gallery">
+        <h3> Campaign gallery </h3>
+        <p>Our successful blood donation campaign volunteer efforts</p>
+        <div class="container-fluid">
+            <div class="row g-0">
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="assets/img/gallery/gallery-1.jpg" class="glightbox">
+                            <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="assets/img/gallery/gallery-2.jpg" class="glightbox">
+                            <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="assets/img/gallery/gallery-3.jpg" class="glightbox">
+                            <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="assets/img/gallery/gallery-4.jpg" class="glightbox">
+                            <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="assets/img/gallery/gallery-5.jpg" class="glightbox">
+                            <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="assets/img/gallery/gallery-6.jpg" class="glightbox">
+                            <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 d-lg-inline d-md-none">
+                    <div class="gallery-item">
+                        <a href="assets/img/gallery/gallery-7.jpg" class="glightbox">
+                            <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 d-lg-inline d-md-none">
+                    <div class="gallery-item">
+                        <a href="assets/img/gallery/gallery-8.jpg" class="glightbox">
+                            <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <!-- Footer Top Section  -->
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col-12 col-sm-6 col-lg-4">
+                <h5>About Us</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam deserunt suscipit natus
+                    exercitationem
+                    nesciunt nemo maxime voluptatem qui, error inventore cumque vero, adipisci iure corporis.
+                    Exercitationem ullam dolorem perspiciatis facilis!</p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-2">
+                <h5>Quick Links</h5>
+                <ul class="list-group">
+                    <li><span><i class="fa-solid fa-angles-right"></i></span><span><a href="#">About Us</a></span>
+                    </li>
+                    <li><span><i class="fa-solid fa-angles-right"></i></span><span><a href="#">Campaigns</a></span>
+                    </li>
+                    <li><span><i class="fa-solid fa-angles-right"></i></span><span><a href="#">Latest
+                                News</a></span>
+                    </li>
+                    <li><span><i class="fa-solid fa-angles-right"></i></span><span><a href="#">Contact</a></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-2">
+                <h5>Our Services</h5>
+                <ul class="list-group">
+                    <li><span><i class="fa-solid fa-angles-right"></i></span><span><a href="#">Blood
+                                Donation</a></span>
+                    </li>
+                    <li><span><i class="fa-solid fa-angles-right"></i></span><span><a href="#">Health
+                                Check</a></span>
+                    </li>
+                    <li><span><i class="fa-solid fa-angles-right"></i></span><span><a href="#">Blood
+                                Banks</a></span>
+                    </li>
+                    <li><span><i class="fa-solid fa-angles-right"></i></span><span><a href="#">Donation
+                                Process</a></span></li>
+                </ul>
+
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <h5>Latest News</h5>
+                <div class="row mb-1">
+                    <div class="col-3 fp-news"><img src="https://placehold.co/75" alt=""></div>
+                    <div class="col fp-news">
+                        <a href="#">
+                            <h6>Lorem ipsum dolor sit amet</h6>
+                        </a>
+                        <p>April 25, 2024</p>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-3 fp-news"><img src="https://placehold.co/75" alt=""></div>
+                    <div class="col fp-news">
+                        <a href="#">
+                            <h6>Lorem ipsum dolor sit amet</h6>
+                        </a>
+                        <p>April 25, 2024</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="my-5">
+            <hr data-content="MORE" class="hr-text">
+        </div>
+
+        <!-- Footer Bottom Section  -->
+        <div class="row">
+            <div class="col-12 col-sm-5">
+                <form class="row row-cols-lg-auto g-3 align-items-center">
+                    <div class="col-9">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="emailAddress"
+                                placeholder="Enter Your Email Address">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="btn"
+                            style="background-color: red; color: white;">Subscribe</button>
+                    </div>
+                </form>
+                <p>Subscribe for upcoming news and updates</p>
+
+            </div>
+            <div class="col-12 col-sm-7">
+                <div class="social" style="text-align: right;">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-discord"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </div>
+
+                <div class="terms" style="text-align: right;">
+                    <span><a href="#">Privacy Policy</a></span>
+                    <span><a href="#">Terms & Condition</a></span>
+                    <span><a href="#">FAQ</a></span>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright Section  -->
+    <div class="row copyright">
+        <div class="col-12" style="background-color: black;">
+            <p>Copyright &copy; 2024 | All right reseved by <b>Besty Platform</b> </p>
+        </div>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
+    <!-- Custom Javascript -->
+    <script src="script.js"></script>
+    <script src="assets/js/map.js"></script>
+    <script>
+        const lightbox = GLightbox();
+        lightbox.on('open', () => {
+        });
+        displayMap();
+
+        fetch('https://dummyjson.com/users')
+            .then(res => res.json())
+            .then(data => {
+                for (const data of data.users) {
+                    data.forEach(user => {
+                        console.log(user);
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
+</html>
