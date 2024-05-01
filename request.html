@@ -1,0 +1,155 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-6 d-flex align-items-stretch py-3">
+            <div class="content">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>List of Request</h2><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 container">
+                        <table class="table table-dark table-striped" id="requestTable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Requested Blood Group</th>
+                                    <th>Location</th>
+                                    <th>Request Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Content goes here -->
+                            </tbody>
+                        </table>
+                        <center><button class="btn" style="background-color: red; color: white;">Browse All
+                                Request</button></center>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-lg-6 d-flex align-items-stretch py-3">
+            <div class="content">
+                <h2>Requesting Form</h2>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="name@domain.com">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option value="">Select Blood Group</option>
+                            <option value="">A+</option>
+                            <option value="">A-</option>
+                            <option value="">B+</option>
+                            <option value="">B-</option>
+                            <option value="">AB+</option>
+                            <option value="">AB-</option>
+                            <option value="">O+</option>
+                            <option value="">O-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option value="">Select Division</option>
+                            <option value="">Dhaka</option>
+                            <option value="">Chittagong</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option value="">Select District</option>
+                            <option value="">Dhaka</option>
+                            <option value="">Chittagong</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option value="">Select Upazila</option>
+                            <option value="">Dhaka</option>
+                            <option value="">Chittagong</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div> -->
+
+        <div class="col-lg-6 d-flex align-items-stretch py-3">
+            <div class="content">
+                <h2>Requesting Form</h2>
+                <form action="" method="post" class="php-email-form mt-4">
+                    <div class="row gy-4">
+
+                        <div class="col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
+                        </div>
+
+                        <div class="col-md-12 ">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <select class="form-control">
+                                <option value="">Select Blood Group</option>
+                                <option value="">A+</option>
+                                <option value="">A-</option>
+                                <option value="">B+</option>
+                                <option value="">B-</option>
+                                <option value="">AB+</option>
+                                <option value="">AB-</option>
+                                <option value="">O+</option>
+                                <option value="">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select class="form-control">
+                                <option value="">Select Division</option>
+                                <option value="">Dhaka</option>
+                                <option value="">Chittagong</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select class="form-control">
+                                <option value="">Select District</option>
+                                <option value="">Dhaka</option>
+                                <option value="">Chittagong</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select class="form-control">
+                                <option value="">Select Upazila</option>
+                                <option value="">Dhaka</option>
+                                <option value="">Chittagong</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <textarea class="form-control" name="message" rows="6" placeholder="Message"
+                                required></textarea>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="btn" style="background-color: red; color: white;">Submit
+                                Request</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</div>

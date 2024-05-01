@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Blood Donation</title>
+    <title>Blood Donation App</title>
 
     <!-- Google Fonts -->
     <link
@@ -14,8 +14,6 @@
 
     <!-- Icon Vendor CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 
     <!-- Other Vendor CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -23,8 +21,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-
 
     <!-- Main CSS File -->
     <link rel="stylesheet" href="style.css">
@@ -36,6 +32,7 @@
       * Author: https://github.com/dizaraj
       * License: https://github.com/dizaraj/license/
       ======================================================== -->
+      
 </head>
 
 <body>
@@ -43,261 +40,271 @@
     <header id="header" class="fixed-top"> </header>
     <section id="hero" class="bg-dark text-secondary px-4 py-5 text-center">
     </section>
+    <main id="main">
+        <!-- ======= Blood Request Section ======= -->
+        <section id="blood-request" class="blood-request py-5">
+        </section>
+        <!-- End Blood Request -->
 
-    <section class="hospital" id="hospital">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2>Hospital Near You</h2>
-                <!-- https://codepen.io/arsho/pen/EPLqJp -->
-            </div>
-        </div>
-        <div id="map" style="width: 100%; height: 600px;"></div>
-    </section>
-
-
-    <section id="cta" class="container-fluid cta text-center p-5">
-    </section>
-
-    <section id="nearbyDonars" class="container-fluid p-5">
-
-        <div class="conatiner">
+        <section class="hospital" id="hospital">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h3>List of Donors</h3><br>
+                    <h2>Hospital Near You</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 container">
-                    <table class="table table-dark table-striped" id="usersTable">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>Blood Group</th>
-                                <th>Last date donated</th>
-                                <th>Contact</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                    <center><button class="btn btn-lg" style="background-color: red; color: white;">Find Nearby Donors</button></center>
+            <div id="map" style="width: 100%; height: 600px;"></div>
+        </section>
 
+
+        <section id="cta" class="container-fluid cta text-center p-5">
+        </section>
+
+        <!-- Donor Section Start -->
+        <section id="nearbyDonars" class="container-fluid p-5">
+
+            <div class="conatiner">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>List of Donors</h3><br>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col-12 container">
+                        <table class="table table-dark table-striped" id="usersTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Blood Group</th>
+                                    <th>Last date donated</th>
+                                    <th>Contact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Content goes here -->
+                            </tbody>
+                        </table>
+                        <center><button class="btn btn-lg" style="background-color: red; color: white;">Find Nearby
+                                Donors</button></center>
+
+                    </div>
+                </div>
+
             </div>
+        </section>
+        <!-- Donor Section End -->
 
-        </div>
-    </section>
+        <div class="modal fade" id="info1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
 
-    <div class="modal fade" id="info1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <table class="table" style="font-size: 10px;">
+                            <thead>
+                                <tr>
+                                    <th>Abhishek Gupta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Age</td>
+                                    <td>18</td>
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body text-center">
-                    <table class="table" style="font-size: 10px;">
-                        <thead>
-                            <tr>
-                                <th>Abhishek Gupta</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Age</td>
-                                <td>18</td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>Rawa Mandi, Phagwara</td>
 
-                            </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td>Rawa Mandi, Phagwara</td>
+                                </tr>
+                                <tr>
+                                    <td>Blood Group</td>
+                                    <td>B+</td>
 
-                            </tr>
-                            <tr>
-                                <td>Blood Group</td>
-                                <td>B+</td>
+                                </tr>
 
-                            </tr>
+                                <tr>
+                                    <td>Last date Donated</td>
+                                    <td>23 March 2018</td>
 
-                            <tr>
-                                <td>Last date Donated</td>
-                                <td>23 March 2018</td>
+                                </tr>
 
-                            </tr>
+                                <tr>
+                                    <td>Contact</td>
+                                    <td>7545423441</td>
 
-                            <tr>
-                                <td>Contact</td>
-                                <td>7545423441</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>gupta.Abhishek426@gmail.com</td>
 
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>gupta.Abhishek426@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>Hospital Associate with</td>
+                                    <td>Ganga Ben Hospital</td>
 
-                            </tr>
-                            <tr>
-                                <td>Hospital Associate with</td>
-                                <td>Ganga Ben Hospital</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="modal fade" id="eligible" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title text-center">ELIGIBILITY</div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body" style="font-size: 15px;">
-                    <ul>
-                        <li>Any donor, who is healthy, fit and not suffering from any transmittable diseases can
-                            donate
-                            blood.</li>
-
-                        <li>Donor must be 18 -60 years age and having a minimum weight of 50Kg can donate blood.
-                        </li>
-                        <li>Donor’s Hemoglobin level is 12.5% minimum.</li>
-                        <li>A donor can again donate blood after 3 months of your last donation of blood.</li>
-                        <li>Pulse rate must be between 50 to 100mm without any irregularities.</li>
-                        <li>BP Diastolic 50 to 100 mm Hg and Systolic 100 to 180 mm Hg.</li>
-                        <li>Body temperature should be normal and oral temperature should not exceed 37.5 degree
-                            Celsius.</li>
-
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="modal fade" id="doctor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center" id="exampleModalLabel">Dr. Ram Naresh - Specialist</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <table class="table" style="font-size: 10px;">
+        <div class="modal fade" id="eligible" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title text-center">ELIGIBILITY</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body" style="font-size: 15px;">
+                        <ul>
+                            <li>Any donor, who is healthy, fit and not suffering from any transmittable diseases can
+                                donate
+                                blood.</li>
 
-                        <tbody>
-                            <tr>
-                                <td>Age</td>
-                                <td>52</td>
+                            <li>Donor must be 18 -60 years age and having a minimum weight of 50Kg can donate blood.
+                            </li>
+                            <li>Donor’s Hemoglobin level is 12.5% minimum.</li>
+                            <li>A donor can again donate blood after 3 months of your last donation of blood.</li>
+                            <li>Pulse rate must be between 50 to 100mm without any irregularities.</li>
+                            <li>BP Diastolic 50 to 100 mm Hg and Systolic 100 to 180 mm Hg.</li>
+                            <li>Body temperature should be normal and oral temperature should not exceed 37.5 degree
+                                Celsius.</li>
 
-                            </tr>
-                            <tr>
-                                <td>Specialist</td>
-                                <td>Phd Hematologist</td>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                            </tr>
-                            <tr>
-                                <td>Hospital</td>
-                                <td>DY Patil Hospital, Phagwara</td>
-
-                            </tr>
-
-                            <tr>
-                                <td>Email</td>
-                                <td>RamNaresh@gmail.com</td>
-
-                            </tr>
-
-                            <tr>
-                                <td>Contact</td>
-                                <td>7545423441</td>
-
-
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="modal fade" id="donars" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Donars</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-striped" style="font-size: 15px;">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>Blood Group</th>
-                                <th>Last date donated</th>
-                                <th>Contact</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Abhishek Gupta</td>
-                                <td>18</td>
-                                <td>B+</td>
-                                <td>23 March 2018</td>
-                                <td>7545423441</td>
-                            </tr>
-                            <tr>
-                                <td>Abrar Ahmad Raza</td>
-                                <td>19</td>
-                                <td>A+</td>
-                                <td>11 Feb 2018</td>
-                                <td>8751007246</td>
-                            </tr>
-                            <tr>
-                                <td>DeshBandhu</td>
-                                <td>18</td>
-                                <td>O+</td>
-                                <td>30 March 2017</td>
-                                <td>9842224581</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
+        <div class="modal fade" id="doctor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="exampleModalLabel">Dr. Ram Naresh - Specialist</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table" style="font-size: 10px;">
+
+                            <tbody>
+                                <tr>
+                                    <td>Age</td>
+                                    <td>52</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Specialist</td>
+                                    <td>Phd Hematologist</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Hospital</td>
+                                    <td>DY Patil Hospital, Phagwara</td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>Email</td>
+                                    <td>RamNaresh@gmail.com</td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>Contact</td>
+                                    <td>7545423441</td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="modal fade" id="donars" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Donars</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped" style="font-size: 15px;">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Blood Group</th>
+                                    <th>Last date donated</th>
+                                    <th>Contact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Abhishek Gupta</td>
+                                    <td>18</td>
+                                    <td>B+</td>
+                                    <td>23 March 2018</td>
+                                    <td>7545423441</td>
+                                </tr>
+                                <tr>
+                                    <td>Abrar Ahmad Raza</td>
+                                    <td>19</td>
+                                    <td>A+</td>
+                                    <td>11 Feb 2018</td>
+                                    <td>8751007246</td>
+                                </tr>
+                                <tr>
+                                    <td>DeshBandhu</td>
+                                    <td>18</td>
+                                    <td>O+</td>
+                                    <td>30 March 2017</td>
+                                    <td>9842224581</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-    <section id="gallery" class="text-center gallery">
-    </section>
-
+        <section id="gallery" class="text-center gallery">
+        </section>
+    </main>
+    
+    <!-- Footer Section  -->
     <footer id="footer">
     </footer>
 
@@ -341,6 +348,7 @@
         fetchHtml('cta', 'cta.html');
         fetchHtml('gallery', 'gallery.html');
         fetchHtml('footer', 'footer.html');
+        fetchHtml('blood-request', 'request.html');
 
     </script>
     <script src="userdata.js"></script>

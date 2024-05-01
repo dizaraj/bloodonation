@@ -289,9 +289,9 @@ body {
 }
 
 /**
-* Appointment Button *
+* Nav Register Button *
 */
-.appointment-btn {
+.register-btn {
     margin-left: 25px;
     background: #ff0000;
     color: #fff;
@@ -303,7 +303,7 @@ body {
     display: inline-block;
 }
 
-.appointment-btn:hover {
+.register-btn:hover {
     background: #db2020;
     color: #fff;
 }
@@ -318,12 +318,13 @@ body {
 /* Custom Code */
 
 #hero {
-    min-height: 50vh;
+    min-height: 60vh;
     background-image: url("assets/img/hero-bg.png");
     background-position: center center;
     background-size: cover;
     background-blend-mode: screen;
     margin-top: 80px;
+    margin-bottom: -200px;
 }
 
 a,
@@ -373,6 +374,7 @@ footer a {
 footer ul {
     list-style: none;
 }
+
 
 .fa-solid {
     font-size: .5em;
@@ -434,18 +436,6 @@ hr.hr-text::before {
     padding-left: 7px;
 }
 
-
-/* inline Codes */
-.fa-info {
-    cursor: pointer;
-    font-size: 35px;
-}
-
-.fa-info:hover {
-    color: red;
-    transition-duration: 1s;
-}
-
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
@@ -456,11 +446,93 @@ hr.hr-text::before {
 }
 
 .gallery .gallery-item img {
-    height: 200px;
+    height: 250px;
     width: 100%;
     transition: all ease-in-out 0.4s;
 }
 
 .gallery .gallery-item:hover img {
     transform: scale(1.1);
+}
+
+#hero .container {
+    position: relative;
+}
+
+/*--------------------------------------------------------------
+# Blood Request Section
+--------------------------------------------------------------*/
+#blood-request{
+
+}
+
+#requestTable i{
+    color: red;
+    font-size: 1em;
+}
+
+.blood-request .content {
+    padding: 30px;
+    background: #111111;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.blood-request .content h3 {
+    font-weight: 700;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.blood-request .content p {
+    margin-bottom: 30px;
+}
+
+.blood-request .content .more-btn {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 30px 8px 30px;
+    color: #fff;
+    border-radius: 50px;
+    transition: all ease-in-out 0.4s;
+}
+
+.blood-request .content .more-btn i {
+    font-size: 14px;
+}
+
+.blood-request .content .more-btn:hover {
+    color: #1977cc;
+    background: #fff;
+}
+
+.blood-request .icon-boxes .icon-box {
+    text-align: center;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    width: 100%;
+}
+
+.blood-request .icon-boxes .icon-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+}
+
+.why-us .icon-boxes .icon-box p {
+    font-size: 15px;
+    color: #848484;
+}
+
+.hospital{
+background-color: #111111;
+color: white;
+}
+
+h2, h3{
+    padding: 30px 0;
+    text-transform: uppercase;
+    text-align: center;
 }
