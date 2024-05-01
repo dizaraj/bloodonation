@@ -1,3 +1,4 @@
+// Division / District / Upazila onload function
 window.onload = function () {
   var divisionSelect = document.getElementById("division");
   var districtSelect = document.getElementById("district");
@@ -48,11 +49,10 @@ window.onload = function () {
     .catch((error) => console.error("Error:", error));
 };
 
-document.getElementById("search").addEventListener("click", function () {
-  var division = document.getElementById("division").value;
-  var district = document.getElementById("district").value;
-  var upazila = document.getElementById("upazila").value;
+// Button Click function
+// document.getElementById("search").addEventListener("click", function () {
+//   var division = document.getElementById("division").value;
+//   var district = document.getElementById("district").value;
+//   var upazila = document.getElementById("upazila").value;
 
-  // Display the selected data
-  // ...
-});
+// });

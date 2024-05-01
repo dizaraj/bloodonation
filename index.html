@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Other Vendor CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -30,72 +31,20 @@
 
     <!-- =======================================================
       * Template Name: BloodDonation
-      * Template URL: https://dizaraj.pages.dev/blood-donation
+      * Template URL: https://github.com/dizaraj/bloodonation
       * Updated: April 26 2024 with Bootstrap v5.3.3
-      * Author: https://dizaraj.pages.dev/
-      * License: https://dizaraj.pages.dev/blood-donation/license/
+      * Author: https://github.com/dizaraj
+      * License: https://github.com/dizaraj/license/
       ======================================================== -->
 </head>
 
 <body>
 
-    <!-- Want to Donate Blood
-    > Blood Donation Camp
-    > Donor Login
-    > About Blood Donation
-    
-    -->
-
-    <header id="header" class="fixed-top">
-    </header>
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header').innerHTML = data)
-            .catch(error => console.error(error));
-
-    </script>
-
-    <main>
-
-    </main>
-
+    <header id="header" class="fixed-top"> </header>
     <section id="hero" class="bg-dark text-secondary px-4 py-5 text-center">
-        <div class="py-5">
-            <h1 class="display-5 fw-bold text-white">Blood Donation</h1>
-            <div class="col-lg-6 mx-auto">
-                <p class="fs-5 mb-4">Navigate our registered donors near you. We are always commited to help you.</p>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-6">
-                            <label for="division">Division</label>
-                            <select id="division" class="form-control">
-                                <option value="">Choose Division</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <label for="district">District</label>
-                            <select id="district" class="form-control">
-                                <option value="">Choose District</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <label for="upazila">Upazila</label>
-                            <select id="upazila" class="form-control">
-                                <option value="">Choose Upazila</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <button id="search" class="btn btn-danger w-100 mt-4">Search Donors</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="hospital" id="hospital">
-
         <div class="row">
             <div class="col-12 text-center">
                 <h2>Hospital Near You</h2>
@@ -103,16 +52,10 @@
             </div>
         </div>
         <div id="map" style="width: 100%; height: 600px;"></div>
-
     </section>
 
 
-    <section id="beadonor" class="container-fluid donor text-center p-5">
-        <h5>We are here to help the people</h5>
-        <p>You can give blood to your nearby blood requester or blood bank. We have thousands of registered poeple who
-            may need
-            your help.</p>
-        <button type="button" class="btn" style="background-color: #111111; color: white;"> Become a Donor</button>
+    <section id="cta" class="container-fluid cta text-center p-5">
     </section>
 
     <section id="nearbyDonars" class="container-fluid p-5">
@@ -120,13 +63,11 @@
         <div class="conatiner">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h3>Nearby Donars</h3><br>
+                    <h3>List of Donors</h3><br>
                 </div>
             </div>
             <div class="row">
-
                 <div class="col-12 container">
-
                     <table class="table table-dark table-striped" id="usersTable">
                         <thead>
                             <tr>
@@ -138,33 +79,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Abhishek Gupta</td>
-                                <td>18</td>
-                                <td>B+</td>
-                                <td>23 March 2018</td>
-                                <td>7545423441&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-info"
-                                        data-toggle="modal" data-target="#info1"></span></td>
-                            </tr>
-                            <tr>
-                                <td>Abrar Ahmad Raza</td>
-                                <td>19</td>
-                                <td>A+</td>
-                                <td>11 Feb 2018</td>
-                                <td>8751007246&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-info"
-                                        data-toggle="modal" data-target="#info1"></span></td>
-                            </tr>
-                            <tr>
-                                <td>DeshBandhu</td>
-                                <td>18</td>
-                                <td>O+</td>
-                                <td>30 March 2017</td>
-                                <td>9842224581&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-info"
-                                        data-toggle="modal" data-target="#info1"></span></td>
-                            </tr>
                         </tbody>
                     </table>
-                    <center><button class="btn btn-lg btn-danger">More</button></center>
+                    <center><button class="btn btn-lg btn-danger">Find Nearby Donors</button></center>
 
                 </div>
             </div>
@@ -379,90 +296,10 @@
 
 
     <section id="gallery" class="text-center gallery">
-        <h3> Campaign gallery </h3>
-        <p>Our successful blood donation campaign volunteer efforts</p>
-        <div class="container-fluid">
-            <div class="row g-0">
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-1.jpg" class="glightbox">
-                            <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-2.jpg" class="glightbox">
-                            <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-3.jpg" class="glightbox">
-                            <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-4.jpg" class="glightbox">
-                            <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-5.jpg" class="glightbox">
-                            <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-6.jpg" class="glightbox">
-                            <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6 d-lg-inline d-md-none">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-7.jpg" class="glightbox">
-                            <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6 d-lg-inline d-md-none">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-8.jpg" class="glightbox">
-                            <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
     </section>
 
-
     <footer id="footer">
-     </footer>
-     <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer').innerHTML = data)
-            .catch(error => console.error(error));
-
-    </script>
+    </footer>
 
     <!-- Copyright Section  -->
     <div class="row copyright">
@@ -488,20 +325,25 @@
         lightbox.on('open', () => {
         });
         displayMap();
-
-        fetch('https://dummyjson.com/users')
-            .then(res => res.json())
-            .then(data => {
-                for (const data of data.users) {
-                    data.forEach(user => {
-                        console.log(user);
-                    });
-                }
-            });
     </script>
 
+    <script>
+        function fetchHtml(id, htmlFile) {
+            fetch(htmlFile)
+                .then(response => response.text())
+                .then(data => document.getElementById(id).innerHTML = data)
+                .catch(error => console.error(error));
+        }
 
+        // call function to fetch local file
+        fetchHtml('header', 'header.html');
+        fetchHtml('hero', 'hero.html');
+        fetchHtml('cta', 'cta.html');
+        fetchHtml('gallery', 'gallery.html');
+        fetchHtml('footer', 'footer.html');
 
+    </script>
+    <script src="userdata.js"></script>
 
 </body>
 
