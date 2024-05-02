@@ -7,6 +7,10 @@ Red: #ea062b
 
 */
 
+@import url(request.css);
+@import url(navigation.css);
+@import url(footer.css);
+
 * {
     margin: 0;
     padding: 0;
@@ -48,277 +52,14 @@ table {
 }
 
 #header .logo a {
-    color: #2c4964;
+    color: #ea062b;
 }
 
 #header .logo img {
     max-height: 40px;
 }
 
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/**
-* Desktop Navigation 
-*/
-.navbar {
-    padding: 0;
-}
 
-.navbar ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
-.navbar li {
-    position: relative;
-}
-
-.navbar>ul>li {
-    position: relative;
-    white-space: nowrap;
-    padding: 8px 0 8px 20px;
-}
-
-.navbar a,
-.navbar a:focus {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #2c4964;
-    white-space: nowrap;
-    transition: 0.3s;
-    border-bottom: 2px solid #fff;
-    padding: 5px 2px;
-}
-
-.navbar a i,
-.navbar a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
-}
-
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
-    color: #ea062b;
-    border-color: #ea062b;
-}
-
-.navbar .dropdown ul {
-    display: block;
-    position: absolute;
-    left: 20px;
-    top: calc(100% + 30px);
-    margin: 0;
-    padding: 10px 0;
-    z-index: 99;
-    opacity: 0;
-    visibility: hidden;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    transition: 0.3s;
-}
-
-.navbar .dropdown ul li {
-    min-width: 200px;
-}
-
-.navbar .dropdown ul a {
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: none;
-    color: #082744;
-    border: none;
-}
-
-.navbar .dropdown ul a i {
-    font-size: 12px;
-}
-
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
-    color: #ea062b;
-}
-
-.navbar .dropdown:hover>ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
-}
-
-.navbar .dropdown .dropdown ul {
-    top: 0;
-    left: calc(100% - 30px);
-    visibility: hidden;
-}
-
-.navbar .dropdown .dropdown:hover>ul {
-    opacity: 1;
-    top: 0;
-    left: 100%;
-    visibility: visible;
-}
-
-@media (max-width: 1366px) {
-    .navbar .dropdown .dropdown ul {
-        left: -90%;
-    }
-
-    .navbar .dropdown .dropdown:hover>ul {
-        left: -100%;
-    }
-}
-
-/**
-* Mobile Navigation 
-*/
-.mobile-nav-toggle {
-    color: #2c4964;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-    line-height: 0;
-    transition: 0.5s;
-}
-
-.mobile-nav-toggle.bi-x {
-    color: #fff;
-}
-
-@media (max-width: 991px) {
-    .mobile-nav-toggle {
-        display: block;
-    }
-
-    .navbar ul {
-        display: none;
-    }
-}
-
-.navbar-mobile {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(28, 47, 65, 0.9);
-    transition: 0.3s;
-    z-index: 999;
-}
-
-.navbar-mobile .mobile-nav-toggle {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.navbar-mobile ul {
-    display: block;
-    position: absolute;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
-    padding: 10px 0;
-    background-color: #fff;
-    overflow-y: auto;
-    transition: 0.3s;
-}
-
-.navbar-mobile>ul>li {
-    padding: 0;
-}
-
-.navbar-mobile a,
-.navbar-mobile a:focus {
-    padding: 10px 20px;
-    font-size: 15px;
-    color: #2c4964;
-    border: none;
-}
-
-.navbar-mobile a:hover,
-.navbar-mobile .active,
-.navbar-mobile li:hover>a {
-    color: #ea062b;
-}
-
-.navbar-mobile .getstarted,
-.navbar-mobile .getstarted:focus {
-    margin: 15px;
-}
-
-.navbar-mobile .dropdown ul {
-    position: static;
-    display: none;
-    margin: 10px 20px;
-    padding: 10px 0;
-    z-index: 99;
-    opacity: 1;
-    visibility: visible;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-}
-
-.navbar-mobile .dropdown ul li {
-    min-width: 200px;
-}
-
-.navbar-mobile .dropdown ul a {
-    padding: 10px 20px;
-}
-
-.navbar-mobile .dropdown ul a i {
-    font-size: 12px;
-}
-
-.navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
-    color: #ea062b;
-}
-
-.navbar-mobile .dropdown>.dropdown-active {
-    display: block;
-}
-
-
-/**
-* Nav Register Button *
-*/
-.register-btn {
-    margin-left: 25px;
-    background: #ea062b;
-    color: #fff;
-    border-radius: 50px;
-    padding: 8px 25px;
-    white-space: nowrap;
-    transition: 0.3s;
-    font-size: 14px;
-    display: inline-block;
-}
-
-.register-btn:hover {
-    background: #db2020;
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-    .appointment-btn {
-        margin: 0 15px 0 0;
-        padding: 6px 18px;
-    }
-}
 
 /* Custom Code */
 
@@ -339,6 +80,10 @@ a:hover {
 
 }
 
+#hero .container {
+    position: relative;
+}
+
 #nearbyDonars{
 background-color: #111111;
 color: white;
@@ -348,97 +93,9 @@ color: white;
     background-color: #ea062b;
     color: white;
     background-image: url("assets/img/blood-donation-bg.png");
-    /* background-repeat: no-repeat; */
     background-size: cover;
     background-blend-mode: multiply;
     background-position: center center;
-}
-
-footer {
-    background: #111111;
-    padding: 20px 50px;
-    color: #ea062b;
-    background-image: url("assets/img/footer-bg.png");
-    background-repeat: no-repeat;
-    background-position: top right;
-    background-size: contain;
-    background-blend-mode: overlay;
-}
-
-footer li {
-    line-height: 1.5;
-}
-
-footer h5,
-footer p,
-footer a {
-    font-size: 0.9em;
-    color: white
-}
-
-footer ul {
-    list-style: none;
-}
-
-
-.fa-solid {
-    font-size: .5em;
-    margin-right: 5px;
-}
-
-.card {
-    background-color: transparent;
-}
-
-.fp-news h6 {
-    font-size: 0.9em;
-    /* flex-shrink: 1; */
-}
-
-.fp-news p {
-    font-size: 0.75em;
-    color: #ea062b;
-
-}
-
-hr.hr-text {
-    position: relative;
-    border: none;
-    height: 1px;
-    background: #999;
-}
-
-hr.hr-text::before {
-    content: attr(data-content);
-    display: block;
-    background: #fff;
-    font-weight: bold;
-    font-size: 0.85em;
-    color: #f00;
-    border-radius: 25em;
-    padding: 0.5em 2em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.copyright p {
-    font-size: 0.75em;
-    text-align: center;
-    color: #ea062b;
-    padding: 20px 0;
-}
-
-.social i {
-    margin-right: 10px;
-}
-
-.terms span:not(:last-child)::after {
-    color: white;
-    content: "|";
-    font-size: 0.75em;
-    padding-left: 7px;
 }
 
 /*--------------------------------------------------------------
@@ -458,76 +115,6 @@ hr.hr-text::before {
 
 .gallery .gallery-item:hover img {
     transform: scale(1.1);
-}
-
-#hero .container {
-    position: relative;
-}
-
-/*--------------------------------------------------------------
-# Blood Request Section
---------------------------------------------------------------*/
-#blood-request{
-
-}
-
-#requestTable i{
-    color: #ea062b;
-    font-size: 1.1em;
-}
-#usersTable i{
-    color: orange;
-    font-size: 1.1em;
-}
-
-.blood-request .content {
-    padding: 30px;
-    background: #111111;
-    border-radius: 4px;
-    color: #fff;
-}
-
-.blood-request .content h3 {
-    font-weight: 700;
-    font-size: 34px;
-    margin-bottom: 30px;
-}
-
-.blood-request .content p {
-    margin-bottom: 30px;
-}
-
-.blood-request .content .more-btn {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 6px 30px 8px 30px;
-    color: #fff;
-    border-radius: 50px;
-    transition: all ease-in-out 0.4s;
-}
-
-.blood-request .content .more-btn i {
-    font-size: 14px;
-}
-
-.blood-request .content .more-btn:hover {
-    color: #1977cc;
-    background: #fff;
-}
-
-.blood-request .icon-boxes .icon-box {
-    text-align: center;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    padding: 40px 30px;
-    width: 100%;
-}
-
-.blood-request .icon-boxes .icon-box h4 {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0 0 30px 0;
 }
 
 .why-us .icon-boxes .icon-box p {

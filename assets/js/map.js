@@ -56,9 +56,69 @@ function displayMap() {
   }
 }
 
-
 // Call the function from another JavaScript file or from your HTML file
 // displayMap();
 
 // to avoid development mode use API key
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+
+// Display nearby hospitals from google maps
+
+function initMap() {
+  var lat = 22.35986956234364;
+  var lng = 91.83315844578688;
+  var location = { lat, lng }; // Replace with your location
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        lat = position.coords.latitude;
+        lng = position.coords.longitude;
+      });
+    }
+  }
+
+  getLocation();
+  
+  var map = new google.maps.Map(document.getElementById("map"), {
+    center: location,
+    zoom: 15,
+  });
+
+  var request = {
+    location: location,
+    radius: "500",
+    type: ["hospital"],
+  };
+
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+
+  function callback(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
+    }
+  }
+
+  function createMarker(place) {
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location,
+    });
+  }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(
+    browserHasGeolocation
+      ? "Error: The Geolocation service failed. Please enable your browser location functionality."
+      : "Error: Your browser doesn't support geolocation."
+  );
+  infoWindow.open(map);
+}
+
+// Call the function to display the map
+// initMap();
