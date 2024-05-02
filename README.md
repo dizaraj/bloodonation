@@ -22,7 +22,7 @@ http://maps.google.com/maps/api/js
 ```
 ## JSON File
 ## Used JSON File to manipulate user data
-[DUMMYJSON] (https://dummyjson.com/users)
+[DUMMYJSON](https://dummyjson.com/users)
 ```
 https://dummyjson.com/users
 ```
@@ -31,7 +31,6 @@ https://dummyjson.com/users
 https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css
 https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
 ```
-## Will be Used
 ```
 https://code.jquery.com/jquery-3.2.1.slim.min.js
 https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
