@@ -17,6 +17,10 @@ body {
     font-size: 1em;
 }
 
+table {
+    text-align: center;
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -103,8 +107,8 @@ body {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-    color: #ff0000;
-    border-color: #ff0000;
+    color: #ea062b;
+    border-color: #ea062b;
 }
 
 .navbar .dropdown ul {
@@ -142,7 +146,7 @@ body {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-    color: #ff0000;
+    color: #ea062b;
 }
 
 .navbar .dropdown:hover>ul {
@@ -246,7 +250,7 @@ body {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-    color: #ff0000;
+    color: #ea062b;
 }
 
 .navbar-mobile .getstarted,
@@ -281,19 +285,20 @@ body {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-    color: #ff0000;
+    color: #ea062b;
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
     display: block;
 }
 
+
 /**
 * Nav Register Button *
 */
 .register-btn {
     margin-left: 25px;
-    background: #ff0000;
+    background: #ea062b;
     color: #fff;
     border-radius: 50px;
     padding: 8px 25px;
@@ -340,7 +345,7 @@ color: white;
 }
 
 .cta {
-    background-color: red;
+    background-color: #ea062b;
     color: white;
     background-image: url("assets/img/blood-donation-bg.png");
     /* background-repeat: no-repeat; */
@@ -352,7 +357,7 @@ color: white;
 footer {
     background: #111111;
     padding: 20px 50px;
-    color: red;
+    color: #ea062b;
     background-image: url("assets/img/footer-bg.png");
     background-repeat: no-repeat;
     background-position: top right;
@@ -392,7 +397,7 @@ footer ul {
 
 .fp-news p {
     font-size: 0.75em;
-    color: red;
+    color: #ea062b;
 
 }
 
@@ -421,7 +426,7 @@ hr.hr-text::before {
 .copyright p {
     font-size: 0.75em;
     text-align: center;
-    color: red;
+    color: #ea062b;
     padding: 20px 0;
 }
 
@@ -467,8 +472,12 @@ hr.hr-text::before {
 }
 
 #requestTable i{
-    color: red;
-    font-size: 1em;
+    color: #ea062b;
+    font-size: 1.1em;
+}
+#usersTable i{
+    color: orange;
+    font-size: 1.1em;
 }
 
 .blood-request .content {
