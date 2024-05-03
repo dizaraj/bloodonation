@@ -1,0 +1,141 @@
+/* Color Code 
+Light Black: #111111
+Black: #000000
+Gray: #333333
+Light Gray: #424242
+Red: #ea062b
+
+*/
+
+@import url(request.css);
+@import url(navigation.css);
+@import url(footer.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1em;
+}
+
+table {
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    top: 0;
+    box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
+}
+
+#header.header-scrolled {
+    top: 0;
+}
+
+#header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
+}
+
+#header .logo a {
+    color: #ea062b;
+}
+
+#header .logo img {
+    max-height: 40px;
+}
+
+
+
+/* Custom Code */
+
+#hero {
+    min-height: 60vh;
+    background-image: url("../../assets/img/hero-bg.png");
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: screen;
+    margin-top: 80px;
+    margin-bottom: -200px;
+}
+
+@media (max-width: 768px) {
+    #hero {
+        margin-bottom: -140px;
+    }
+}
+
+
+a,
+a:hover {
+    text-decoration: none;
+    color: white;
+
+}
+
+#hero .container {
+    position: relative;
+}
+
+#nearbyDonars{
+background-color: #111111;
+color: white;
+}
+
+.cta {
+    background-color: #ea062b;
+    color: white;
+    background-image: url("../../assets/img/blood-donation-bg.png");
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: center center;
+}
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+.gallery .gallery-item {
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+
+.gallery .gallery-item img {
+    height: 250px;
+    width: 100%;
+    transition: all ease-in-out 0.4s;
+}
+
+.gallery .gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.why-us .icon-boxes .icon-box p {
+    font-size: 15px;
+    color: #848484;
+}
+
+.hospital{
+background-color: #111111;
+color: white;
+}
+
+h2, h3{
+    padding: 30px 0;
+    text-transform: uppercase;
+    text-align: center;
+}
