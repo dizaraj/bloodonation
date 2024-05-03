@@ -54,5 +54,19 @@ window.onload = function () {
 //   var division = document.getElementById("division").value;
 //   var district = document.getElementById("district").value;
 //   var upazila = document.getElementById("upazila").value;
-
 // });
+
+function fetchAllHtml(id, htmlFile) {
+  fetch(htmlFile)
+    .then((response) => response.text())
+    .then((data) => (document.getElementById(id).innerHTML = data))
+    .catch((error) => console.error(error));
+}
+
+// List of HTML files in the 'body_parts' folder
+var htmlFiles = ["header", "hero", "cta", "gallery", "footer", "request"];
+
+// Fetch each HTML file
+htmlFiles.forEach((file) => {
+  fetchAllHtml(file, `assets/body_parts/${file}.html`);
+});

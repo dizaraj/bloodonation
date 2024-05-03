@@ -32,7 +32,6 @@ fetch("https://dummyjson.com/users")
 fetch("https://dummyjson.com/users")
   .then((response) => response.json())
   .then((data) => {
-    // console.log(data.users);
     var table = document.getElementById("requestTable");
     data["users"].slice(0, 5).forEach((user) => {
       var row = table.insertRow(-1);

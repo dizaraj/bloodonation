@@ -23,13 +23,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Main CSS File -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- =======================================================
       * Template Name: BloodDonation
       * Template URL: https://github.com/dizaraj/bloodonation
-      * Updated: April 26 2024 with Bootstrap v5.3.3
-      * Author: https://github.com/dizaraj
+      * Last Update: May 03 2024 with Bootstrap v5.3.3
+      * Author: Dizaraj Dey
+      * Author URI: https://github.com/dizaraj
       * License: https://github.com/dizaraj/license/
       ======================================================== -->
 
@@ -44,7 +45,7 @@
     <!-- Main Body Section Start -->
     <main id="main">
         <!-- ======= Blood Request Section ======= -->
-        <section id="blood-request" class="blood-request py-5">
+        <section id="request" class="blood-request py-5">
         </section>
         <!-- End Blood Request -->
 
@@ -98,6 +99,7 @@
         </section>
         <!-- Donor Section End -->
 
+        <!-- Modal Section Start -->
         <div class="modal fade" id="info1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -162,6 +164,7 @@
                 </div>
             </div>
         </div>
+        <!-- Modal Section End -->
 
         <!-- Gallery Section -->
         <section id="gallery" class="text-center gallery">
@@ -169,7 +172,7 @@
 
     </main>
     <!-- Main Section End -->
-    
+
     <!-- Footer Section  -->
     <footer id="footer">
     </footer>
@@ -177,7 +180,8 @@
     <!-- Copyright Section  -->
     <div class="row copyright">
         <div class="col-12" style="background-color: black;">
-            <p>Copyright &copy; 2024 | All right reserved by <strong> <a href="https://dizaraj.pages.dev/">Dizaraj Dey</a></strong> </p>
+            <p>Copyright &copy; 2024 | All right reserved by <strong> <a href="https://dizaraj.pages.dev/">Dizaraj
+                        Dey</a></strong> </p>
         </div>
     </div>
 
@@ -188,35 +192,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZUoURx-dCX5675lGu_tO5AfpzKx9i_Ao&libraries=places" type="text/javascript"></script>
+    <!-- Replace with your own API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZUoURx-dCX5675lGu_tO5AfpzKx9i_Ao&loading=async&libraries=places" type="text/javascript"></script>
 
     <!-- Custom Javascript -->
     <script src="script.js"></script>
+    <!-- call map function -->
     <script src="assets/js/map.js"></script>
+
+    <!-- Call Glightbox -->
     <script>
         const lightbox = GLightbox();
         lightbox.on('open', () => {
         });
-        initMap();
     </script>
-
-    <script>
-        function fetchHtml(id, htmlFile) {
-            fetch(htmlFile)
-                .then(response => response.text())
-                .then(data => document.getElementById(id).innerHTML = data)
-                .catch(error => console.error(error));
-        }
-
-        // call function to fetch local file
-        fetchHtml('header', 'header.html');
-        fetchHtml('hero', 'hero.html');
-        fetchHtml('cta', 'cta.html');
-        fetchHtml('gallery', 'gallery.html');
-        fetchHtml('footer', 'footer.html');
-        fetchHtml('blood-request', 'request.html');
-
-    </script>
+    <!-- Import Dummy JSON -->
     <script src="userdata.js"></script>
 
 </body>

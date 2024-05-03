@@ -65,13 +65,20 @@ table {
 
 #hero {
     min-height: 60vh;
-    background-image: url("assets/img/hero-bg.png");
+    background-image: url("/assets/img/hero-bg.png");
     background-position: center center;
     background-size: cover;
     background-blend-mode: screen;
     margin-top: 80px;
     margin-bottom: -200px;
 }
+
+@media (max-width: 768px) {
+    #hero {
+        margin-bottom: -140px;
+    }
+}
+
 
 a,
 a:hover {
@@ -92,7 +99,7 @@ color: white;
 .cta {
     background-color: #ea062b;
     color: white;
-    background-image: url("assets/img/blood-donation-bg.png");
+    background-image: url("/assets/img/blood-donation-bg.png");
     background-size: cover;
     background-blend-mode: multiply;
     background-position: center center;
