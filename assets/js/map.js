@@ -56,9 +56,6 @@ async function initMap() {
         "<div class='bg-dark p-2'><strong>" +
         place.name +
         "</strong><br>" +
-        "Place ID: " +
-        place.place_id +
-        "<br>" +
         place.vicinity +
         "</div>",
     });
