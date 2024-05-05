@@ -124,6 +124,78 @@
 
         <!-- Gallery Section -->
         <section id="gallery" class="text-center gallery">
+            <h3 data-aos="zoom-in"> Campaign gallery </h3>
+            <p>Our successful blood donation campaign volunteer efforts</p>
+            <div class="mt-4">
+                <div class="row g-0">
+            
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="gallery-item" data-aos="flip-left">
+                            <a href="./assets/img/gallery/gallery-1.jpg" class="glightbox">
+                                <img src="./assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="gallery-item" data-aos="flip-left">
+                            <a href="./assets/img/gallery/gallery-2.jpg" class="glightbox">
+                                <img src="./assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="gallery-item" data-aos="flip-left">
+                            <a href="./assets/img/gallery/gallery-3.jpg" class="glightbox">
+                                <img src="./assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="gallery-item" data-aos="flip-left">
+                            <a href="./assets/img/gallery/gallery-4.jpg" class="glightbox">
+                                <img src="./assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-4 col-6 ">
+                        <div class="gallery-item" data-aos="flip-left">
+                            <a href="./assets/img/gallery/gallery-5.jpg" class="glightbox">
+                                <img src="./assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-4 col-6 ">
+                        <div class="gallery-item" data-aos="flip-left">
+                            <a href="./assets/img/gallery/gallery-6.jpg" class="glightbox">
+                                <img src="./assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-4 col-6 d-lg-inline d-none">
+                        <div class="gallery-item" data-aos="flip-left">
+                            <a href="./assets/img/gallery/gallery-7.jpg" class="glightbox">
+                                <img src="./assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-4 col-6 d-lg-inline d-none">
+                        <div class="gallery-item" data-aos="flip-left">
+                            <a href="./assets/img/gallery/gallery-8.jpg" class="glightbox">
+                                <img src="./assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+            
+                </div>
+            
+            </div>
         </section>
 
     </main>
@@ -143,7 +215,7 @@
     <script>
         AOS.init();
     </script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Replace with your own API key -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZUoURx-dCX5675lGu_tO5AfpzKx9i_Ao&loading=async&libraries=places"
@@ -154,10 +226,12 @@
     <!-- call map function -->
     <script src="assets/js/map.js"></script>
 
-    <!-- Call Glightbox -->
+    <!-- Call Glightbox // Gligtbox will not work on fetch gallery-->
     <script>
         const lightbox = GLightbox();
-        lightbox.open();
+        lightbox.on('open', () => {
+                // console.log('Lightbox opened');
+            });
     </script>
     <!-- Import Dummy JSON -->
     <script src="userdata.js"></script>

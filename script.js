@@ -49,13 +49,6 @@ window.onload = function () {
     .catch((error) => console.error("Error:", error));
 };
 
-// Button Click function
-// document.getElementById("search").addEventListener("click", function () {
-//   var division = document.getElementById("division").value;
-//   var district = document.getElementById("district").value;
-//   var upazila = document.getElementById("upazila").value;
-// });
-
 function fetchAllHtml(id, htmlFile) {
   fetch(htmlFile)
     .then((response) => response.text())
@@ -64,7 +57,7 @@ function fetchAllHtml(id, htmlFile) {
 }
 
 // List of HTML files in the 'body_parts' folder
-var htmlFiles = ["header", "hero", "cta", "gallery", "footer", "request"];
+var htmlFiles = ["header", "hero", "cta", "footer", "request"];
 
 // Fetch each HTML file
 htmlFiles.forEach((file) => {
