@@ -68,5 +68,5 @@ var htmlFiles = ["header", "hero", "cta", "gallery", "footer", "request"];
 
 // Fetch each HTML file
 htmlFiles.forEach((file) => {
-  fetchAllHtml(file, `assets/body_parts/${file}.html`);
+  fetchAllHtml(file, `./assets/body_parts/${file}.html`);
 });

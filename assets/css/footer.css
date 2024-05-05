@@ -78,9 +78,17 @@ hr.hr-text::before {
     padding-left: 7px;
 }
 
+.copyright {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 4px;
+}
+
+.copyright>div {
+    padding: 20px 0;
+}
+
 .copyright p {
     font-size: 0.75em;
-    text-align: center;
     color: #ea062b;
-    padding: 20px 0;
+    text-align: center;
 }

@@ -18,13 +18,11 @@ fetch("https://dummyjson.com/users")
       var cell3 = row.insertCell(2);
       var cell4 = row.insertCell(3);
       var cell5 = row.insertCell(4);
-      var cell6 = row.insertCell(5);
       cell1.innerHTML = user.firstName + " " + user.lastName;
       cell2.innerHTML = user.age;
-      cell3.innerHTML = user.bloodGroup;
-      cell4.innerHTML = getRandomDate().toLocaleDateString();
-      cell5.innerHTML = user.phone;
-      cell6.innerHTML = "<a href='#'><i class='fa-solid fa-circle-info'></i></a>";
+      cell3.innerHTML = user.gender;
+      cell4.innerHTML = user.bloodGroup;
+      cell5.innerHTML = getRandomDate().toLocaleDateString();
     });
   })
   .catch((error) => console.error("Error:", error));

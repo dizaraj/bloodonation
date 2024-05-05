@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Blood Donation App</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
     <!-- Google Fonts -->
     <link
@@ -21,6 +23,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Main CSS File -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -53,7 +56,7 @@
         <section class="hospital" id="hospital">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h3>Hospital Near You</h3>
+                    <h3 data-aos="fade-right">Hospital Near You</h3>
                 </div>
             </div>
             <div id="map" style="width: 100%; height: 600px;"></div>
@@ -64,34 +67,32 @@
         </section>
 
         <!-- Donor Section Start -->
-        <section id="nearbyDonars" class="container-fluid p-5">
+        <section id="nearbyDonars" class="container-fluid p-sm-5">
 
             <div class="conatiner">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h3>List of Donors</h3><br>
+                        <h3 data-aos="fade-left">List of Donors</h3><br>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 container">
+                    <div class="col-12 container text-center">
                         <table class="table table-dark" id="usersTable">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Name</th>
                                     <th>Age</th>
+                                    <th>Gender</th>
                                     <th>Blood Group</th>
                                     <th>Last date donated</th>
-                                    <th>Contact</th>
-                                    <th>Info</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- Content goes here -->
                             </tbody>
                         </table>
-                        <center><button class="btn" style="background-color: red; color: white;">Find Nearby
-                                Donors</button></center>
-
+                        <a href="donors.html" class="btn mb-4 mb-sm-0" style="background-color: red; color: white;" data-aos="fade-down">Find
+                            Nearby Donors</a>
                     </div>
                 </div>
 
@@ -100,67 +101,22 @@
         <!-- Donor Section End -->
 
         <!-- Modal Section Start -->
-        <div class="modal fade" id="info1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
+                        <h5 class="modal-title" id="exampleModalLabel">User Info</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
                     </div>
-                    <div class="modal-body text-center">
-                        <table class="table" style="font-size: 10px;">
-                            <thead>
-                                <tr>
-                                    <th>Abhishek Gupta</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Age</td>
-                                    <td>18</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Address</td>
-                                    <td>Rawa Mandi, Phagwara</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Blood Group</td>
-                                    <td>B+</td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>Last date Donated</td>
-                                    <td>23 March 2018</td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>Contact</td>
-                                    <td>7545423441</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>gupta.Abhishek426@gmail.com</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Hospital Associate with</td>
-                                    <td>Ganga Ben Hospital</td>
-
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="modal-body">
+                        <!-- Additional user info will go here -->
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                    </div>
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -177,23 +133,21 @@
     <footer id="footer">
     </footer>
 
-    <!-- Copyright Section  -->
-    <div class="row copyright">
-        <div class="col-12" style="background-color: black;">
-            <p>Copyright &copy; 2024 | All right reserved by <strong> <a href="https://dizaraj.pages.dev/">Dizaraj
-                        Dey</a></strong> </p>
-        </div>
-    </div>
-
     <!-- Vendor JS Files -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
     <!-- Replace with your own API key -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZUoURx-dCX5675lGu_tO5AfpzKx9i_Ao&loading=async&libraries=places" type="text/javascript"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZUoURx-dCX5675lGu_tO5AfpzKx9i_Ao&loading=async&libraries=places"
+        type="text/javascript"></script>
 
     <!-- Custom Javascript -->
     <script src="script.js"></script>
@@ -203,8 +157,7 @@
     <!-- Call Glightbox -->
     <script>
         const lightbox = GLightbox();
-        lightbox.on('open', () => {
-        });
+        lightbox.open();
     </script>
     <!-- Import Dummy JSON -->
     <script src="userdata.js"></script>
