@@ -4,11 +4,16 @@ window.onload = function () {
   var districtSelect = document.getElementById("district");
   var upazilaSelect = document.getElementById("upazila");
 
-  fetch("data.json")
+  var countryData =
+    "https://gist.githubusercontent.com/dizaraj/7a8a4b51c6c4dfe3400dc3203f7025fe/raw/bdinfo.json";
+    
+  fetch(countryData)
     .then((response) => response.json())
     .then((data) => {
       // Populate the division select element
+      // console.log(data["Chittagong"]["Chittagong"]["Anwara"]);
       for (var division in data) {
+        // console.log(division);
         var option = document.createElement("option");
         option.text = division;
         option.value = division;
@@ -18,12 +23,14 @@ window.onload = function () {
       // Update the district and upazila select elements when a division is selected
       divisionSelect.onchange = function () {
         // Clear the district and upazila select elements
+        selectedDivision = this.value;
         districtSelect.length = 1;
         upazilaSelect.length = 1;
 
         // Populate the district select element
         var districts = data[this.value];
         for (var district in districts) {
+          // console.log(district);
           var option = document.createElement("option");
           option.text = district;
           option.value = district;
@@ -37,12 +44,22 @@ window.onload = function () {
         upazilaSelect.length = 1;
 
         // Populate the upazila select element
-        var upazilas = data[divisionSelect.value][this.value];
-        for (var i = 0; i < upazilas.length; i++) {
-          var option = document.createElement("option");
-          option.text = upazilas[i];
-          option.value = upazilas[i];
-          upazilaSelect.add(option);
+        var upazilas = data[selectedDivision][this.value];
+        if (Array.isArray(upazilas)){
+          for (var upazila of upazilas) {
+            var option = document.createElement("option");
+            option.text = upazila;
+            option.value = upazila;
+            upazilaSelect.add(option);
+          }
+        } 
+        else{
+          for (var upazila in upazilas) {
+            var option = document.createElement("option");
+            option.text = upazila;
+            option.value = upazila;
+            upazilaSelect.add(option);
+          }
         }
       };
     })
