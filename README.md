@@ -37,5 +37,16 @@ https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
 https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
 ```
 
+## Contribution
+Contributions are always welcome! If you'd like to contribute to this web app, please follow these steps:
+- Fork the repository.
+- Create a new branch for your feature or bug fix.
+- Make your changes and commit them to your branch.
+- Push your changes to your forked repository.
+- Submit a pull request describing your changes.
+
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+
+## Contact
+For any inquiries or feedback or Freelance Project, please contact [Email Me](mailto:dizaraj@gmail.com).
