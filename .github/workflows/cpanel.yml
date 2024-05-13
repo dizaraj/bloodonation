@@ -2,8 +2,7 @@
 name: 🚀 Deploy website on push 
 on: 
   push: 
-    branches: 
-      - master 
+    branches: [master] 
       
 jobs: 
   FTP-Deploy-Action: 
@@ -20,3 +19,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          dry-run: true
