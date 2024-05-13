@@ -1,15 +1,19 @@
+# ⭐ contributor Dizaraj Dey | https://github.com/dizaraj | ❤️ Special thanks to  SamKirkland
 name: 🚀 Deploy website on push 
 on: 
   push: 
     branches: 
       - master 
+      
 jobs: 
-  web-deploy: 
+  FTP-Deploy-Action: 
     name: 🎉 Deploy 
     runs-on: ubuntu-latest 
+    
     steps: 
       - name: 🚚 Get latest code 
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 
+        
       - name: 📂 Sync files and folders
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with: 
