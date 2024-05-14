@@ -1,23 +1,22 @@
-# ⭐ contributor Dizaraj Dey | https://github.com/dizaraj | ❤️ Special thanks to  SamKirkland
 name: 🚀 Deploy website on push 
 on: 
   push: 
     branches: [master] 
-      
-jobs: 
-  web-deploy: 
-    name: 🎉 Deploy 
-    runs-on: ubuntu-latest 
-    
-    steps: 
-      - name: 🚚 Get latest code 
-        uses: actions/checkout@v4
-        
-      - name: 📂 Sync files and folders
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with: 
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
-          # dry-run: true
+
+jobs:
+    deploy_job:
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+        - name: Checkout
+        uses: actions/checkout@v2
+        - name: Deploy file
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+            server: ${{ secrets.FTP_SERVER }}
+            username: ${{ secrets.FTP_USERNAME }}
+            password: ${{ secrets.FTP_PASSWORD }}
+            port: ${{ secrets.SERVER_PATH }}
+            local_path: './*'
+            remote_path: '/home/obvoycom/bloodonation.obvoy.com'
+            sftp_only: true
