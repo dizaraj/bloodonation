@@ -74,6 +74,25 @@ table {
     margin-bottom: -200px;
 }
 
+select{
+    cursor: pointer;
+}
+
+.options {
+    position: relative;
+    display: inline-block;
+}
+
+.options::after {
+    content: "\25BC";
+    position: absolute;
+    right: 1.25em;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #212529;
+}
+
 @media (max-width: 992px) {
     #hero {
         margin-bottom: -140px;
@@ -166,19 +185,20 @@ h3 {
     width: 100%;
 }
 
-.content{
+.content {
     min-width: 100%;
-    
+
 }
 
-#campaign > p{
+#campaign>p {
     text-align: center;
 }
+
 #campaign i {
     color: #ff0000;
 }
 
-#campaign > h3{
+#campaign>h3 {
     color: #ffffff;
 }
 
