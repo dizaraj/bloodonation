@@ -166,6 +166,11 @@ h3 {
     width: 100%;
 }
 
+.content{
+    min-width: 100%;
+    
+}
+
 #campaign > p{
     text-align: center;
 }
