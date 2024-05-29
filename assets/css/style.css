@@ -212,3 +212,22 @@ h3 {
     min-height: 250px;
     object-fit: cover;
 }
+
+.fa-circle-info{
+    font-size: 1.5em;
+    color: orange;
+}
+
+.modal-header {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    /* padding: 5px 10px; */
+    border: none;
+    background: none;
+    font-size: 1.5em;
+}

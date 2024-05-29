@@ -37,7 +37,10 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- ======= Navigation / Header Section ======= -->
+    <header id="header" class="fixed-top"> </header>
+
+    <div class="container mt-5 pt-5">
         <div class="form-group">
             <label for="filterGender">Gender</label>
             <select id="filterGender" class="form-control" onchange="filterTable()">
@@ -63,45 +66,28 @@
         <table class="table" id="myTable">
             <thead>
                 <tr>
-                    <th scope="col">State</th>
-                    <th scope="col">City</th>
+                    <th scope="col">Name</th>
+                    <!-- <th scope="col">City</th> -->
                     <th scope="col">Age</th>
                     <th scope="col">Gender</th>
                     <th scope="col">Blood Group</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Info</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Rows will be populated from the API -->
             </tbody>
         </table>
+
+        <div id="modals"></div>
+
         <nav>
             <ul class="pagination" id="pagination">
                 <!-- Pagination buttons will be added here -->
             </ul>
         </nav>
     </div>
-
-    <!-- Modal Section Start -->
-    <div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">User Info</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Additional user info will go here -->
-                </div>
-                <!-- <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div> -->
-            </div>
-        </div>
-    </div>
-    <!-- Modal Section End -->
 
     <footer id="footer">
         <!-- Footer Top Section  -->
@@ -232,12 +218,44 @@
                     // Populate the table
                     data["users"].forEach(function (user, index) {
                         var row = document.createElement('tr');
-                        row.appendChild(createCell(user.address.state));
-                        row.appendChild(createCell(user.address.city));
+                        row.appendChild(createCell(user.firstName + " " + user.lastName));
+                        // row.appendChild(createCell(user.address.city));
                         row.appendChild(createCell(user.age));
                         row.appendChild(createCell(user.gender));
                         row.appendChild(createCell(user.bloodGroup));
+                        row.appendChild(createCell(user.address.city));
+
+                        // Create a button that opens the modal
+                        var infoButton = document.createElement('button');
+                        infoButton.innerHTML = "<i class='fa-solid fa-circle-info'></i>";
+                        infoButton.classList.add('btn');
+                        infoButton.setAttribute('data-toggle', 'modal');
+                        infoButton.setAttribute('data-target', '#userModal' + index);
+                        row.appendChild(createCell("")).appendChild(infoButton);
+
                         document.getElementById('myTable').getElementsByTagName('tbody')[0].appendChild(row);
+
+                        // Create a modal for the user
+                        var modal = document.createElement('div');
+                        modal.classList.add('modal', 'fade');
+                        modal.id = 'userModal' + index;
+                        modal.innerHTML = `
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <img src="${user.image}" alt="User image" style="width: 100%;">
+                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="modal-title">${user.firstName} ${user.lastName}</h5>
+                                    <p>Age: ${user.age}</p>
+                                    <p>Gender: ${user.gender}</p>
+                                    <p>Blood Group: ${user.bloodGroup}</p>
+                                    <p>City: ${user.address.city}</p>
+                                </div>
+                            </div>
+                        </div>`;
+                        document.getElementById('modals').appendChild(modal);
                     });
 
                     // Get the query string from the URL
@@ -285,8 +303,8 @@
             var table = document.getElementById("myTable");
             var tr = table.getElementsByTagName("tr");
             for (var i = 0; i < tr.length; i++) {
-                var tdGender = tr[i].getElementsByTagName("td")[3];
-                var tdBloodGroup = tr[i].getElementsByTagName("td")[4];
+                var tdGender = tr[i].getElementsByTagName("td")[2];
+                var tdBloodGroup = tr[i].getElementsByTagName("td")[3];
                 if (tdGender && tdBloodGroup) {
                     var txtValueGender = tdGender.textContent || tdGender.innerText;
                     var txtValueBloodGroup = tdBloodGroup.textContent || tdBloodGroup.innerText;
@@ -299,8 +317,6 @@
                 }
             }
         }
-
-
 
         function showPage() {
             var table = document.getElementById('myTable');
