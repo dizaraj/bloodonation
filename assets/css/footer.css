@@ -65,6 +65,8 @@ hr.hr-text::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
+    /* line-height: 40px; */
 }
 
 .social i {
@@ -79,7 +81,7 @@ hr.hr-text::before {
 }
 
 .copyright {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 4px;
 }
 

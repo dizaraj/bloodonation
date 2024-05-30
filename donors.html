@@ -41,28 +41,35 @@
     <header id="header" class="fixed-top"> </header>
 
     <div class="container mt-5 pt-5">
-        <div class="form-group">
-            <label for="filterGender">Gender</label>
-            <select id="filterGender" class="form-control" onchange="filterTable()">
-                <option value="">All</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
+        <div class="row">
+            <div class="form-group col-6">
+                <label for="filterGender">Gender</label>
+                <select id="filterGender" class="form-control" onchange="filterTable()">
+                    <option value="">All</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group col-6">
+                <label for="filterBloodGroup">Blood Group</label>
+                <select id="filterBloodGroup" class="form-control" onchange="filterTable()">
+                    <option value="">All</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="filterBloodGroup">Blood Group</label>
-            <select id="filterBloodGroup" class="form-control" onchange="filterTable()">
-                <option value="">All</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-            </select>
-        </div>
+
+    </div>
+
+    <div class="container mt-5">
         <table class="table" id="myTable">
             <thead>
                 <tr>
@@ -206,132 +213,6 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        var currentPage = 1;
-        var rowsPerPage = 10;
-
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('https://dummyjson.com/users')
-                .then(response => response.json())
-                .then(data => {
-                    // console.log(data["users"].length);
-                    // Populate the table
-                    data["users"].forEach(function (user, index) {
-                        var row = document.createElement('tr');
-                        row.appendChild(createCell(user.firstName + " " + user.lastName));
-                        // row.appendChild(createCell(user.address.city));
-                        row.appendChild(createCell(user.age));
-                        row.appendChild(createCell(user.gender));
-                        row.appendChild(createCell(user.bloodGroup));
-                        row.appendChild(createCell(user.address.city));
-
-                        // Create a button that opens the modal
-                        var infoButton = document.createElement('button');
-                        infoButton.innerHTML = "<i class='fa-solid fa-circle-info'></i>";
-                        infoButton.classList.add('btn');
-                        infoButton.setAttribute('data-toggle', 'modal');
-                        infoButton.setAttribute('data-target', '#userModal' + index);
-                        row.appendChild(createCell("")).appendChild(infoButton);
-
-                        document.getElementById('myTable').getElementsByTagName('tbody')[0].appendChild(row);
-
-                        // Create a modal for the user
-                        var modal = document.createElement('div');
-                        modal.classList.add('modal', 'fade');
-                        modal.id = 'userModal' + index;
-                        modal.innerHTML = `
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <img src="${user.image}" alt="User image" style="width: 100%;">
-                                    <button type="button" class="close" data-dismiss="modal">×</button>
-                                </div>
-                                <div class="modal-body">
-                                    <h5 class="modal-title">${user.firstName} ${user.lastName}</h5>
-                                    <p>Age: ${user.age}</p>
-                                    <p>Gender: ${user.gender}</p>
-                                    <p>Blood Group: ${user.bloodGroup}</p>
-                                    <p>City: ${user.address.city}</p>
-                                </div>
-                            </div>
-                        </div>`;
-                        document.getElementById('modals').appendChild(modal);
-                    });
-
-                    // Get the query string from the URL
-                    var queryString = window.location.search.substring(1);
-
-                    // Set the input field value and filter the table
-                    if (queryString) {
-                        document.getElementById('filterInput').value = queryString;
-                        filterTable();
-                    }
-
-                    // Add pagination buttons
-                    var numPages = Math.ceil(data["users"].length / rowsPerPage);
-                    // console.log(numPages);
-                    for (var i = 1; i <= numPages; i++) {
-                        var li = document.createElement('li');
-                        li.className = 'page-item';
-                        var a = document.createElement('a');
-                        a.className = 'page-link';
-                        a.href = '#';
-                        a.innerText = i;
-                        a.addEventListener('click', function (e) {
-                            e.preventDefault();
-                            currentPage = parseInt(this.innerText);
-                            showPage();
-                        });
-                        li.appendChild(a);
-                        document.getElementById('pagination').appendChild(li);
-                    }
-
-                    // Show the first page
-                    showPage();
-                });
-
-            function createCell(text) {
-                var cell = document.createElement('td');
-                cell.appendChild(document.createTextNode(text));
-                return cell;
-            }
-        });
-
-        function filterTable() {
-            var filterGender = document.getElementById("filterGender").value.toUpperCase();
-            var filterBloodGroup = document.getElementById("filterBloodGroup").value.toUpperCase();
-            var table = document.getElementById("myTable");
-            var tr = table.getElementsByTagName("tr");
-            for (var i = 0; i < tr.length; i++) {
-                var tdGender = tr[i].getElementsByTagName("td")[2];
-                var tdBloodGroup = tr[i].getElementsByTagName("td")[3];
-                if (tdGender && tdBloodGroup) {
-                    var txtValueGender = tdGender.textContent || tdGender.innerText;
-                    var txtValueBloodGroup = tdBloodGroup.textContent || tdBloodGroup.innerText;
-                    if ((filterGender === "" || txtValueGender.toUpperCase() === filterGender) &&
-                        (filterBloodGroup === "" || txtValueBloodGroup.toUpperCase().indexOf(filterBloodGroup) > -1)) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-
-        function showPage() {
-            var table = document.getElementById('myTable');
-            var rows = table.getElementsByTagName('tr');
-            for (var i = 1; i < rows.length; i++) {
-                if (i <= rowsPerPage * (currentPage - 1) || i > rowsPerPage * currentPage) {
-                    rows[i].style.display = 'none';
-                } else {
-                    rows[i].style.display = '';
-                }
-            }
-        }
-
-    </script>
-
     <!-- Vendor JS Files -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -346,17 +227,7 @@
 
     <!-- Custom Javascript -->
     <script src="script.js"></script>
-    <!-- call map function -->
-    <script src="assets/js/map.js"></script>
-
-    <!-- Call Glightbox -->
-    <script>
-        const lightbox = GLightbox();
-        lightbox.on('open', () => {
-        });
-    </script>
-    <!-- Import Dummy JSON -->
-    <script src="userdata.js"></script>
+    <script src="./assets/js/donors.js"></script>
 
 </body>
 

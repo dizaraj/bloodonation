@@ -110,7 +110,7 @@
 
                     <div class="col">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-                            <a href="./assets/img/team/1.jpg" class="glightbox"
+                            <a href="./assets/img/team/1.jpg" class="glightbox2"
                                 data-glightbox="title: Volunteer Name; description: .vol-data-1">
                                 <img src="./assets/img/team/1_thumb.jpg" alt="" class="img-fluid">
                             </a>
@@ -124,7 +124,7 @@
 
                     <div class="col">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="200">
-                            <a href="./assets/img/team/2.jpg" class="glightbox"
+                            <a href="./assets/img/team/2.jpg" class="glightbox2"
                                 data-glightbox="title: Volunteer Name; description: .vol-data-2">
                                 <img src="./assets/img/team/2_thumb.jpg" alt="" class="img-fluid">
                             </a>
@@ -138,7 +138,7 @@
 
                     <div class="col">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="300">
-                            <a href="./assets/img/team/1.jpg" class="glightbox"
+                            <a href="./assets/img/team/1.jpg" class="glightbox2"
                                 data-glightbox="title: Volunteer Name; description: .vol-data-3">
                                 <img src="./assets/img/team/1_thumb.jpg" alt="" class="img-fluid">
                             </a>
@@ -152,7 +152,7 @@
 
                     <div class="col">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="400">
-                            <a href="./assets/img/team/2.jpg" class="glightbox"
+                            <a href="./assets/img/team/2.jpg" class="glightbox2"
                                 data-glightbox="title: Volunteer Name; description: .vol-data-4">
                                 <img src="./assets/img/team/2_thumb.jpg" alt="" class="img-fluid">
                             </a>
@@ -166,7 +166,7 @@
 
                     <div class="col">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="500">
-                            <a href="./assets/img/team/1.jpg" class="glightbox"
+                            <a href="./assets/img/team/1.jpg" class="glightbox2"
                                 data-glightbox="title: Volunteer Name; description: .vol-data-5">
                                 <img src="./assets/img/team/1_thumb.jpg" alt="" class="img-fluid">
                             </a>
@@ -180,7 +180,7 @@
 
                     <div class="col">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="600">
-                            <a href="./assets/img/team/2.jpg" class="glightbox"
+                            <a href="./assets/img/team/2.jpg" class="glightbox2"
                                 data-glightbox="title: Volunteer Name; description: .vol-data-6">
                                 <img src="./assets/img/team/2_thumb.jpg" alt="" class="img-fluid">
                             </a>
@@ -194,7 +194,7 @@
 
                     <div class="col d-lg-inline d-none">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="700">
-                            <a href="./assets/img/team/1.jpg" class="glightbox"
+                            <a href="./assets/img/team/1.jpg" class="glightbox2"
                                 data-glightbox="title: Volunteer Name; description: .vol-data-7">
                                 <img src="./assets/img/team/1_thumb.jpg" alt="" class="img-fluid">
                             </a>
@@ -208,7 +208,7 @@
 
                     <div class="col d-lg-inline d-none">
                         <div class="team-member" data-aos="fade-up" data-aos-delay="800">
-                            <a href="./assets/img/team/2.jpg" class="glightbox"
+                            <a href="./assets/img/team/2.jpg" class="glightbox2"
                                 data-glightbox="title: Volunteer Name; description: .vol-data-8">
                                 <img src="./assets/img/team/2_thumb.jpg" alt="" class="img-fluid">
                             </a>
@@ -387,11 +387,33 @@
     <script>
         const lightbox = GLightbox();
         lightbox.on('open', () => {
-            // console.log('Lightbox opened');
         });
+
+        const lightbox2 = GLightbox({
+            selector: '.glightbox2'
+        });
+
     </script>
     <!-- Import Dummy JSON -->
     <script src="userdata.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navItems = document.querySelectorAll('.nav-link');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Remove 'active' class from all navigation items
+                    navItems.forEach(navItem => {
+                        navItem.classList.remove('active');
+                    });
+
+                    // Add 'active' class to the clicked navigation item
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
 
 </body>
 
